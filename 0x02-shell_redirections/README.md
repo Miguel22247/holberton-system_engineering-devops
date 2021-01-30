@@ -1,14 +1,15 @@
 pendientes: 
-10
 13
 16
 18
 22
 
 
-
-
 hechos
+
+
+
+A espera de revision:
 0
 1
 2
@@ -18,6 +19,9 @@ hechos
 6
 7
 8
+9
+10
+11
 12
 14
 15
@@ -25,8 +29,3 @@ hechos
 19
 20
 21
-
-
-stand by:
-11
-9
