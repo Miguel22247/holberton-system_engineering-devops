@@ -1,6 +1,5 @@
 pendientes: 
 7
-9
 10
 13
 16
@@ -30,3 +29,4 @@ hechos
 
 stand by:
 11
+9
