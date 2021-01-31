@@ -14,6 +14,8 @@ hechos
 15
 17
 19
+20
+21
 
 A espera de revision:
 9
@@ -23,6 +25,4 @@ A espera de revision:
 13
 16
 18
-20
-21
 22
