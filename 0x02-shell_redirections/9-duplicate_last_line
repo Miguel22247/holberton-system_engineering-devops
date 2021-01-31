@@ -1,2 +1,2 @@
 #!/bin/bash
-cat /holberton-system_engineering-devops/0x02-shell_redirections/iacta | tail -n 1 iacta >> iacta
+cat | tail -n 1 iacta >> iacta
