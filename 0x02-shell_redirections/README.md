@@ -4,6 +4,8 @@ hechos
 0
 1
 2
+3
+4
 5
 6
 7
@@ -11,8 +13,6 @@ hechos
 
 
 A espera de revision:
-3
-4
 8
 9
 10
