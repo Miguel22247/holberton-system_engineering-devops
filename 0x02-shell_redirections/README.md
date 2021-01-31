@@ -1,5 +1,4 @@
 pendientes: 
-18
 
 hechos
 
@@ -24,6 +23,7 @@ A espera de revision:
 15
 16
 17
+18
 19
 20
 21
