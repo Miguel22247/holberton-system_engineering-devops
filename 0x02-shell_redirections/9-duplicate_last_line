@@ -1,2 +1,2 @@
 #!/bin/bash
-tail -n 1 $file1 >> $file2
+tail -n 1 $iacta >> $iacta
