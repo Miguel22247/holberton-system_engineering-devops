@@ -1,2 +1,3 @@
 #!/bin/bash
-printf 
+printf "%s\n" "Hello, $USER!" 
+
