@@ -1,2 +1,2 @@
 #!/bin/bash	
-ls -1 | paste - - | cut -f1
+printf "%o\n" $(( $(( $(echo 5#$STIR | tr stir. '0-4' ) )) + $(( $(echo 5#$WATER | tr water '0-4') )) )) | tr '0-7' behlnort
