@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # This script is displaying "Holberton School" 10 times
-i=0
+n=0
 
-while [ $i -le 9 ]
+while [ $n -le 9 ]
 do
 	echo "Holberton School"
 	((i++))
