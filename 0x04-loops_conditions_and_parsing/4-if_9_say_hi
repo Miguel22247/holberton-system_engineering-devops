@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# This script is displaying "Holberton School" 9 times
+# This script is displaying "Holberton School" 10 times
 sent=0
 
 while [ $sent -le 9 ]
 do
-	echo "Holberton school"
-	if [[ "$sent" == 8 ]]; then
-	   echo "Hi"
-	fi
-	((sent++))
+    echo "Holberton School"
+    if [[ "$sent" == 8 ]]; then
+        echo "Hi"
+    fi
+    ((sent++))
 done
