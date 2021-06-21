@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script display the content
+shopt -s nullglob
+for entry in *
+do
+	echo "${entry#*-}"
+done

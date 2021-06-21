@@ -5,5 +5,5 @@ n=0
 while [ $n -le 9 ]
 do
 	echo "Holberton School"
-	((i++))
+	((n++))
 done
