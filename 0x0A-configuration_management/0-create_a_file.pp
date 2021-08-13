@@ -1,8 +1,8 @@
 # create a file
-file { 'holberton'
-    path => '/tmp/holberton',
-    mode => '0744',
-    content => 'I love Puppet',
-    owner => 'www-data',
-    group => 'www-data',
+file { 'holberton':
+  path    => '/tmp/holberton',
+  mode    => '0744',
+  content => 'I love Puppet',
+  group   => 'www-data',
+  owner   => 'www-data',
 }
