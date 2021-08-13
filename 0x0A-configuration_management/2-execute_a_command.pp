@@ -1,4 +1,4 @@
 exec { 'killmenow':
-    command => 'pkill -f killmenow'
-    provider => 'shell'
+    command => 'pkill -f killmenow',
+    provider => 'shell',
 }
