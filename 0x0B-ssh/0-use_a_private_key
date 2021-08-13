@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# this script creates the ssh file
+ssh -i ~/.ssh/holberton ubuntu@35.227.18.212
