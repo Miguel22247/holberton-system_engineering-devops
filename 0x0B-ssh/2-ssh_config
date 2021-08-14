@@ -1,9 +1,6 @@
-#!/usr/bin/env bash
-# script that sets perms
-Host *
-    PasswordAuthentication no
+Host 34.139.167.198
+    HostName 34.139.167.198
+    User ubuntu
+    Port 22
     IdentityFile ~/.ssh/holberton
-    SendEnv LANG LC_*
-    HashKnownHosts yes
-    GSSAPIAuthentication yes
-    GSSAPIDelegateCredentials no
+    PasswordAuthentication No
