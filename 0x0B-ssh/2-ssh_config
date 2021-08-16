@@ -1,6 +1,6 @@
-Host 34.139.167.198
-    HostName 34.139.167.198
-    User ubuntu
-    Port 22
+SendEnv LANG LC_*
+    HashKnownHosts yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials no
     IdentityFile ~/.ssh/holberton
-    PasswordAuthentication No
+    PasswordAuthentication no
