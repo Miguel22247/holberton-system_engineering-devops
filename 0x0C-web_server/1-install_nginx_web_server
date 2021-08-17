@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 # Installs the nginx engine
-apt-get update -y
-apt-get install -y nginx
-ufw allow 'Nginx HTTP'
-chown -R "$USER":"$USER" /var/www/html
+apt-get update 
+apt-get upgrade
+apt-get -y install nginx 
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
-service nginx restart
