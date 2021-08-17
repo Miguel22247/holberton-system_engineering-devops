@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Install server, create 404 html file, set redirect and set new 404 page
-apt-get -y update
-apt-get -y install nginx
-ufw allow 'Nginx HTTP'
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
 sudo chown -R "$USER":"$USER" /var/www/
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
 echo "Ceci n'est pas une page" > /var/www/html/new_404.html
