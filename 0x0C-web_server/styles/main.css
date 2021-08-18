@@ -47,6 +47,10 @@ button {
 	border-radius: 4px;
 }
 
+button a {
+	color: white;
+	text-decoration: none;
+}
 button:hover {
 	opacity: 0.9;
 }
