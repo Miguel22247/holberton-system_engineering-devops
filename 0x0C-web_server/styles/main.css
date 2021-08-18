@@ -15,15 +15,38 @@ h2 {
 }
 
 .header {
-	background: #0080ff;
+	background: #000000;
 	padding: 40px;
 }
 
-img {
+.content img {
 	margin: 0;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
+}
+
+button {
+	margin: 0;
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	height: 48px;
+	width: 20%;
+	background-color: #000000;
+	color: white;
+	font-size: 18px;
+	opacity: 1;
+	height: 48px;
+	width: 20%;
+	border: none;
+	border-radius: 4px;
+}
+
+button:hover {
+	opacity: 0.9;
 }
