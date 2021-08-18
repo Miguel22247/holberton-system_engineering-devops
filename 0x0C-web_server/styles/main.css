@@ -1,0 +1,29 @@
+body {
+	background-color: white;
+	margin: 0;
+	padding: 0;
+	font-family: "Proxima Nova", Helvetica, sans-serif;
+}
+
+h2 {
+	font-size: 40px;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.header {
+	background: #0080ff;
+	padding: 40px;
+}
+
+img {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
