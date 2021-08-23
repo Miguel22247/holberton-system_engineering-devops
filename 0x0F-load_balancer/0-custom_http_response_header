@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script configures web-0w to be identical to the web-01
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+sudo chown -R "$USER":"$USER" /var/www/
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+echo "Ceci n'est pas une page" > /var/www/html/new_404.html
+sudo sed -i '/server_name _/a rewrite ^/redirect_me/ https://www.youtube.com/watch?v=QH2-TGUlwu4/$1 permanent;\n' /etc/nginx/sites-available/default
+sudo sed -i '/server_name _/a error_page 404 /new_404.html; \nlocation = /new_404.html \n{\nroot /var/www/html/;\ninternal; \n}' /etc/nginx/sites-available/default
+sudo sed -i '/# First attempt to serve request as file, then/a add_header X-Served-By $hostname;\n' /etc/nginx/sites-available/default
+sudo service nginx restart
