@@ -1,16 +1,24 @@
 #!/usr/bin/env bash
 # This script configures an subdomain
-func(){
-	Type=$(dig "$2.$1" | grep -A1 'ANSWER SECTION:' | tail -n 1 | awk '{print $4}')
-	IP=$(dig "$2.$1" | grep -A1 'ANSWER SECTION:' | tail -n 1 | awk '{print $5}')
-	echo "The subdomain $2 is a $Type record and points to $IP"
+func()
+{
+    SUBDOMAIN="$2"
+    COMPLETE="$2.$1"
+    INFO="$(dig "$COMPLETE" | grep 'ANSWER SECTION' -A1 | awk 'NR==2')"
+    IP=$(echo "$INFO" | awk '{print $5}')
+    RECORD=$(echo "$INFO" | awk '{print $4}')
+    echo The subdomain "$SUBDOMAIN" is a "$RECORD" record and points to "$IP"
 }
 
-if [ $# -eq 2 ]; then
-   func $1 $2
-elif [ $# -eq 1 ]; then
-     func $1 www
-     func $1 lb-01
-     func $1 web-01
-     func $1 web-02
+
+if [[ -z "$2" ]]
+then   
+    SUB_LIST="www lb-01 web-01 web-02"
+    for it in $SUB_LIST; do
+	func "$1" "$it"
+    done
+else
+    func "$1" "$2"
 fi
+
+exit 0
