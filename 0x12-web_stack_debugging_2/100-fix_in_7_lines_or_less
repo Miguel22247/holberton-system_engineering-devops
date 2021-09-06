@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Script that runs nginx as nginx
+# Script that runs nginx as nginx but in 7 lines
 sudo pkill -o apache2
 sudo chmod 744 /etc/nginx/nginx.conf
 sudo sed -i '4i\ user nginx; \n' /etc/nginx/nginx.conf
