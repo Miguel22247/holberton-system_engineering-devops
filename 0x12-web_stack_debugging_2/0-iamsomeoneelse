@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Script that runs the whoami
-USER = "$1"
-sudo -u $USER whoami
+USER="$1"
+sudo -u "$USER" whoami
