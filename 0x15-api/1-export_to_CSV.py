@@ -23,4 +23,4 @@ if __name__ == "__main__":
         task = csv.writer(file_, delimiter=',',
                           quotechar='"', quoting=csv.QUOTE_ALL)
         for w_table in range(len(status)):
-            task.writerow([USER_ID, USERNAME, status[w_table], titles[w_table]])
+            task.w_row([USER_ID, USERNAME, status[w_table], titles[w_table]])
