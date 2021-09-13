@@ -1,22 +1,26 @@
-
 #!/usr/bin/python3
-""" This script dumps a dict into a CSV file
-"""
+"""Script to export data in the CSV format"""
+import csv
 import requests
 from sys import argv
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
+    url = 'https://jsonplaceholder.typicode.com/'
     USER_ID = argv[1]
-    filename = USER_ID + '.csv'
-    user_name = requests.get('https://jsonplaceholder.typicode.com/users/{}/'.
-                             format(USER_ID).json().get('username'))
-    user_tasks = requests.\
-        get('https://jsonplaceholder.typicode.com/users/{}/todos'.
-            format(int(argv[1]))).json()
+    user_url = requests.get(url + 'users?id=' + USER_ID)
+    user_response = user_url.json()
+    USERNAME = user_response[0].get('username')
 
-    with open('{}.csv'.format(argv[1]), mode='w') as file:
-        for item in user_tasks:
-            file.write('"{}","{}","{}","{}"\n'.
-                       format(argv[1], user_name, item.
-                              get('completed'), item.get('title')))
+    todo_url = requests.get(url + 'todos?userId=' + USER_ID)
+    todo_response = todo_url.json()
+    status = []
+    titles = []
+    for content in range(len(todo_response)):
+        status.append(todo_response[content].get('completed'))
+        titles.append(todo_response[content].get('title'))
+    filename = USER_ID + '.csv'
+    with open(filename, mode='w') as file_:
+        task = csv.writer(file_, delimiter=',',
+                          quotechar='"', quoting=csv.QUOTE_ALL)
+        for queue in range(len(status)):
+            task.writerow([USER_ID, USERNAME, status[queue], titles[queue]])
