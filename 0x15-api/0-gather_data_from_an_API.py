@@ -5,10 +5,15 @@ import sys
 from sys import argv
 
 if __name__ == '__main__':
-    response = requests.get('https://jsonplaceholder.typicode.com/todos')
-    values = response.json()
+    url_todo = 'https://jsonplaceholder.typicode.com/todos'
+    url_user = 'https://jsonplaceholder.typicode.com/users'
+
+    values = url_todo.json()
+
+    name_get = requests.get(url_user)
+    user_name = name_get.json()
     real_name = ""
-    for element in real_name:
+    for element in user_name:
         if element.get('id') == int(argv[1]):
             real_name = element.get('name')
             break
