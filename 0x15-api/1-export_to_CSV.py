@@ -22,5 +22,5 @@ if __name__ == '__main__':
     with open(filename, mode='w') as file_:
         task = csv.writer(file_, delimiter=',',
                           quotechar='"', quoting=csv.QUOTE_ALL)
-        for q in range(len(status)):
-            task.writerow([USER_ID, USERNAME, status[q], titles[q]])
+        for w_table in range(len(status)):
+            task.writerow([USER_ID, USERNAME, status[w_table], titles[w_table]])
