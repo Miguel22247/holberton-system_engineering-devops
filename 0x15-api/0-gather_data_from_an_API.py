@@ -7,14 +7,15 @@ if __name__ == '__main__':
     url_todo = 'https://jsonplaceholder.typicode.com/todos'
     url_user = 'https://jsonplaceholder.typicode.com/users'
 
-    values = url_todo.json()
+    response = requests.get(url_todo)
+    values = response.json()
 
     name_get = requests.get(url_user)
     user_name = name_get.json()
     real_name = ""
-    for element in user_name:
-        if element.get('id') == int(argv[1]):
-            real_name = element.get('name')
+    for each_element in user_name:
+        if each_element.get('id') == int(argv[1]):
+            real_name = each_element.get('name')
             break
 
     full_list = []
