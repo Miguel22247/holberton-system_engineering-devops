@@ -2,14 +2,12 @@
 """Script that given employee ID, return information about his list progress"""
 import json
 import requests
-from sys import argv
-
-from requests.api import get
 
 if __name__ == "__main__":
     url = 'https://jsonplaceholder.typicode.com/'
     users = requests.get(url + 'users')
     filename = "todo_all_employees.json"
+
     with open(filename, mode='w') as file:
         all_dict = {}
         for user in users:
