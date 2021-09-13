@@ -5,6 +5,7 @@ import requests
 from sys import argv
 
 if __name__ == "__main__":
+	filename = USER_ID + '.json'
     url = 'https://jsonplaceholder.typicode.com/'
     USER_ID = argv[1]
     getter = requests.get(url + 'users?id=' + USER_ID)
@@ -22,6 +23,5 @@ if __name__ == "__main__":
         new_dict["username"] = USERNAME
         task_list.append(new_dict)
     json_dict[USER_ID] = task_list
-    filename = USER_ID + '.json'
     with open(filename, 'w') as outfile:
         json.dump(json_dict, outfile)

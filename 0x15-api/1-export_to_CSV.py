@@ -14,11 +14,11 @@ if __name__ == "__main__":
     request_file = request.json()
     status = []
     titles = []
+    filename = USER_ID + '.csv'
 
     for content in range(len(request_file)):
         status.append(request_file[content].get('completed'))
         titles.append(request_file[content].get('title'))
-    filename = USER_ID + '.csv'
     with open(filename, mode='w') as file_:
         task = csv.writer(file_, delimiter=',',
                           quotechar='"', quoting=csv.QUOTE_ALL)
