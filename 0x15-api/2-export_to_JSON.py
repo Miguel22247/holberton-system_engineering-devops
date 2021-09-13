@@ -10,12 +10,11 @@ if __name__ == "__main__":
     getter = requests.get(url + 'users?id=' + USER_ID)
     getter_file = getter.json()
     USERNAME = getter_file[0].get('username')
-
     request = requests.get(url + 'todos?userId=' + USER_ID)
     request_file = request.json()
-
     json_dict = {}
     task_list = []
+
     for tasks in range(len(request_file)):
         new_dict = {}
         new_dict["task"] = request_file[tasks].get('title')
