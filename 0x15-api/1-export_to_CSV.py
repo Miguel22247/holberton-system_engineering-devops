@@ -1,26 +1,22 @@
+
 #!/usr/bin/python3
-"""Script that given employee ID, return information about his list progress"""
-import csv
+""" This script dumps a dict into a CSV file
+"""
 import requests
 from sys import argv
 
-if __name__ == "__main__":
-    url = 'https://jsonplaceholder.typicode.com/'
-    USER_ID = argv[1]
-    getter = requests.get(url + 'users?id=' + USER_ID)
-    getter_file = getter.json()
-    USERNAME = getter_file[0].get('username')
-    request = requests.get(url + 'todos?userId=' + USER_ID)
-    request_file = request.json()
-    status = []
-    titles = []
-    filename = USER_ID + '.csv'
 
-    for content in range(len(request_file)):
-        status.append(request_file[content].get('completed'))
-        titles.append(request_file[content].get('title'))
-    with open(filename, mode='w') as file_:
-        task = csv.writer(file_, delimiter=',',
-                          quotechar='"', quoting=csv.QUOTE_ALL)
-        for w_table in range(len(status)):
-            task.w_row([USER_ID, USERNAME, status[w_table], titles[w_table]])
+if __name__ == '__main__':
+    USER_ID = argv[1]
+    filename = USER_ID + '.csv'
+    user_name = requests.get('https://jsonplaceholder.typicode.com/users/{}/'.
+                             format(USER_ID).json().get('username'))
+    user_tasks = requests.\
+        get('https://jsonplaceholder.typicode.com/users/{}/todos'.
+            format(int(argv[1]))).json()
+
+    with open('{}.csv'.format(argv[1]), mode='w') as file:
+        for item in user_tasks:
+            file.write('"{}","{}","{}","{}"\n'.
+                       format(argv[1], user_name, item.
+                              get('completed'), item.get('title')))
