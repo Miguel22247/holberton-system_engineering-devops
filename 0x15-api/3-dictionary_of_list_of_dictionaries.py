@@ -6,6 +6,7 @@ import requests
 
 if __name__ == '__main__':
     url = 'https://jsonplaceholder.typicode.com/users'
+    url_task = 'https://jsonplaceholder.typicode.com/user/id/todos'
     users = requests.get(url).json()
     filename = 'todo_all_employees.json'
     with open(filename, mode='w') as file:
@@ -13,9 +14,7 @@ if __name__ == '__main__':
         for user in users:
             user_dict = {}
             tasks_list = []
-            tasks = requests.\
-                get('https://jsonplaceholder.typicode.com/user/{}/todos'.
-                    format(user.get('id'))).json()
+            tasks = requests.get(url_task)
             for task in tasks:
                 new_task_dict = {}
                 new_task_dict["username"] = user.get('username')
