@@ -5,7 +5,7 @@ import requests
 from sys import argv
 
 if __name__ == "__main__":
-	filename = USER_ID + '.json'
+    filename = USER_ID + '.json'
     url = 'https://jsonplaceholder.typicode.com/'
     USER_ID = argv[1]
     getter = requests.get(url + 'users?id=' + USER_ID)
