@@ -5,7 +5,7 @@ import requests
 
 def top_ten(subreddit):
     """Returns the top ten"""
-    url = 'https://www.reddit.com/r' + subreddit + "/hot.json" + '?limit=10'
+    url = 'https://www.reddit.com/r/' + subreddit + "/hot.json" + '?limit=10'
     headers = {'User-Agent': 'Mozilla/5.0 (Windows; U; Windows)'}
     res_status = requests.get(url, headers=headers, allow_redirects=False)
 
